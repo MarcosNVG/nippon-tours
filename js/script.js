@@ -77,4 +77,3 @@ function clicar(p) {
 }
 
 
-set
