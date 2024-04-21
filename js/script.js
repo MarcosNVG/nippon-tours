@@ -8,7 +8,20 @@ const s2 = document.querySelector('#span2');
 const s3 = document.querySelector('#span3');
 let cardsTourDom = document.querySelector('.d-cards-container .d-cards-tour');
 const cardsContainer = document.querySelector('.d-cards-container');
+const modal = document.querySelector('.section-modal');
+const opacity = document.querySelector('.opacity');
+const titleModal = document.querySelector('.title-modal');
+const destino = document.querySelector('.destino');
+const duracao = document.querySelector('.duracao');
+const priceModal = document.querySelector('.price-modal')
+const qtdPessoas = document.querySelector('#qtdpessoas')
+const totalPrice = document.querySelector('.total-price');
+let titlePac = '';
+let locais = '';
+let tempoViagem = '';
+let price = '';
 
+            /* botão ver mais serviços */
 
 function verMais(){
     secards.classList.toggle('active')
@@ -19,6 +32,7 @@ function verMais(){
     }
 }
 
+            /* Saiba mais pacotes */
 
 function saberMais(p){
     if (p == 1) {
@@ -53,27 +67,92 @@ function saberMais(p){
             /* Card Slider */
 
 function clicar(p) {
+    
     let itemCard = document.querySelectorAll('.d-cards-container .d-cards-tour .card-tour');
+    let setaRight = document.querySelector('.seta-dir');
+    let setaLeft = document.querySelector('.seta-esq');
+    
+    
+    
 
     if(p === 'right') {
         cardsTourDom.appendChild(itemCard[0]);
         cardsContainer.classList.add('next')
-        setTimeout(removerClass, 500);
+        setaRight.style.transform = 'scale(0.9)';
 
-        function removerClass(){
-            cardsContainer.classList.remove('next')
-        }
+        setTimeout(()=>{
+            setaRight.style.transform = 'scale(1)';
+            setaLeft.style.transform = 'scale(1)';
+        }, 100);
+
+        setTimeout(()=>{
+            cardsContainer.classList.remove('next');
+        }, 500);
+        
+
         
     } else {
         let positionLastItem = itemCard.length - 1;
         cardsTourDom.prepend(itemCard[positionLastItem]);
         cardsContainer.classList.add('prev')
-        setTimeout(removerClass, 500);
+        setaLeft.style.transform = 'scale(0.9)';
+        
+        setTimeout(()=>{
+            cardsContainer.classList.remove('prev')
+        }, 500);
+        
+        setTimeout(()=>{
+            setaRight.style.transform = 'scale(1)';
+            setaLeft.style.transform = 'scale(1)';
+        }, 100);
 
         function removerClass(){
-            cardsContainer.classList.remove('prev')
+           
         }
     }
 }
 
+            /* Modal payaments */
 
+function openModal(p) {
+    modal.classList.add('active');
+    opacity.style.display = 'block';
+
+
+
+    if (p == 1) {
+        titlePac = "Descobrindo o Japão";
+        locais = 'Tokyo e Kyoto';
+        tempoViagem = '6 dias';
+        price = 7500.00
+    } else if (p == 2) {
+        titlePac = "Essência do Japão";
+        locais = 'Tokyo e Kyoto';
+        tempoViagem = '7 dias';
+        price = 12500.00
+    } else {
+        titlePac = "Jóias do Japão";
+        locais = 'Tokyo, Kyoto, Hiroshima e Hakone';
+        tempoViagem = '10 dias';
+        price = 45000.00
+    }
+
+
+    qtdPessoas.value = 1
+    titleModal.innerHTML = 'Você está adquirindo o pacote "' + titlePac + '"';
+    destino.innerHTML = 'Destino: ' + locais;
+    duracao.innerHTML = 'Duração: ' + tempoViagem;
+    priceModal.innerHTML = 'A partir de ' + price.toLocaleString('pt-BR',{style: 'currency', currency:'BRL'}) + ' por pessoa';
+    totalPrice.innerHTML = "Total: " + price.toLocaleString('pt-BR',{style: 'currency', currency:'BRL'});
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    opacity.style.display = 'none'
+}
+
+function calcularValor() {
+    let totalValor = Number(price) * Number(qtdPessoas.value);
+
+    totalPrice.innerHTML = "Total: " + totalValor.toLocaleString('pt-BR',{style: 'currency', currency:'BRL'});
+}

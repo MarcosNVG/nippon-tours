@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <title>Nippon Tour</title>
 </head>
 <body>
@@ -169,7 +170,7 @@
                         <p class="valor-pac">A partir de R$7.500 por pessoa</p>
                         <div class="d-button-pac">
                             <span id="span1" onclick="saberMais(1)">Saiba mais</span>
-                            <button>Adquirir Pacote</button>
+                            <button onclick="openModal(1)">Adquirir Pacote</button>
                         </div>
                     </div>
                 </div>
@@ -209,7 +210,7 @@
                         <p class="valor-pac">A partir de R$12.500 por pessoa</p>
                         <div class="d-button-pac">
                             <span id="span2" onclick="saberMais(2)">Saiba mais</span>
-                            <button>Adquirir Pacote</button>
+                            <button onclick="openModal(2)">Adquirir Pacote</button>
                         </div>
                     </div>
                 </div>
@@ -252,7 +253,7 @@
                         <p class="valor-pac">A partir de R$45.000 por pessoa</p>
                         <div class="d-button-pac">
                             <span id="span3" onclick="saberMais(3)">Saiba mais</span>
-                            <button>Adquirir Pacote</button>
+                            <button onclick="openModal(3)">Adquirir Pacote</button>
                         </div>
                     </div>
                 </div>
@@ -278,6 +279,53 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="opacity"></div>
+
+    <section class="section-modal">
+        <div class="modal-payaments">
+            <div class="d-title-modal">
+                <h2 class="title-modal">Você está adquirindo o pacote Essência do japão</h2>
+            </div>
+
+            <div class="content-modal">
+                <div class="info-modal">
+                    <p class="destino">Destinos: Tokyo e Kyoto</p>
+                    <p class="duracao">Duração: 6 dias</p>
+                    <p class="price-modal">A partir de R$7.500 por pessoa</p>
+                    <p>
+                        Quantas pessoas: 
+                        <input type="number" name="" id="qtdpessoas" required>
+                    </p>
+                    <div class="d-button">
+                        <button onclick="calcularValor()">Calcular valor</button>
+                    </div>
+                    <p class="total-price"></p>
+                </div>
+                <p id="line"></p>
+                <div class="payaments-details">
+                    <p id="">Escolha seu método de pagamento:</p>
+
+                    <select>
+                        <option>Pix</option>
+                        <option>Cartão de Crédito</option>
+                        <option>Cartão de Débito</option>
+                        <option>Boleto</option>
+                    </select>
+
+                    <div class="d-button">
+                        <button>Avançar</button>
+                    </div>
+
+                    <p class="p-obs">Assim que confirmado o pagamento entraremos em contato para fazer todas as organizações da viagem</p>
+                </div>
+            </div>
+
+            <div class="close-modal">
+                <span onclick="closeModal()">Fechar</span>
             </div>
         </div>
     </section>

@@ -12,16 +12,18 @@
 :root {
     --cor-principal: #FF2400;
     --cor-secundaria: #DAD2D8;
-    --cor-terciaria:#1C4B5B; 
+    --cor-terciaria:#1C4B5B;
+    --cor-fundo: #143642;
 }
 
 body {
     width: 100%;
     height: auto;
-    background-color: #143642;
+    background-color: var(--cor-fundo);
     color: white;
     font-family: sans-serif;
     position: relative;
+    overflow-x: hidden;
 }
 
 
@@ -64,9 +66,6 @@ body {
 
     /* fim-header */
 
-.section-sobre, .section-galeria, .section-pacotes {
-    padding-top: 40px;
-}
 
     /*section-home*/
 
@@ -74,7 +73,7 @@ body {
     width: 100%;
     height: 100vh;
     padding: 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../imagens/monte-fuji.jpg');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../imagens/monte-fuji-1200.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -140,7 +139,6 @@ body {
     height: auto;
     background-color: var(--cor-terciaria);
     padding: 30px;
-    margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -156,10 +154,15 @@ h2 {
     margin-top: 20px;
 }
 
+.section-sobre, .section-galeria, .section-pacotes {
+    padding-top: 48px;
+}
+
+
         /* d-servicos */
 
 .d-servicos h2 {
-    margin-bottom: 30px;
+    margin: 48px 0px;
 }
 
 .d-servicos .d-cards .oculto {
@@ -200,7 +203,11 @@ h2 {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 40px 0;
+
+}
+
+.d-button-mais button {
+    margin: 28px 0px 48px 0px;
 }
 
  .d-button-mais .btns-mais {
@@ -213,6 +220,7 @@ h2 {
     font-weight: bold;
     transition: 0.15s ease-in;
 }
+
  .d-button-mais .btns-mais:hover {
     cursor: pointer;
     transform: scale(1.05);
@@ -223,15 +231,14 @@ h2 {
 
 .d-cards-container {
     width: 660px;
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
     overflow: hidden;
 }
 
 .d-cards-tour {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center
-    ;
+    justify-content: center;
     gap: 60px;
 }
 
@@ -305,8 +312,8 @@ div.text-tour {
 
 .section-galeria {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .d-galeria {
@@ -327,6 +334,7 @@ div.text-tour {
 .section-galeria a {
     text-decoration: none;
     font-size: 0.8rem;
+    margin-top: 48px;
 }
 
     /* fim-galeria */
@@ -452,6 +460,8 @@ p.valor-pac {
 
 
     /* fim-pacotes */
+
+
 
 
     /* Contato */
