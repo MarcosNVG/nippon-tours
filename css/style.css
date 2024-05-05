@@ -24,45 +24,58 @@ body {
     font-family: sans-serif;
     position: relative;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 
     /* header */
 
-    header {
-        display: flex;
-        width: 100%;
-        justify-content: end;
-        align-items: center;
-        padding: 15px 30px;
-        position: fixed;
-        z-index: 10;
-        /*background-color: var(--cor-secundaria);*/
-    }
-    
-    .lista-home {
-        display: flex;
-        list-style-type: none;
-        gap: 30px;
-    }
-    
-    .lista-home li a {
-        font-size: 1rem;
-        font-weight: bold;
-        color: var(--cor-secundaria);
-        text-decoration: none;
-        padding: 4px;
-        border-bottom: 2px solid transparent;
-    }
-    
-    #li-select, #li-select a{
-        color: var(--cor-principal);
-    }
-    
-    .lista-home li:hover {
-        cursor: pointer;
-        border-bottom: 2px solid;
-    }
+header {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    z-index: 10;
+    /*background-color: var(--cor-secundaria);*/
+}
+
+/*nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}*/
+
+.menu-burguer ion-icon{
+    display: none;
+    /*font-size: 2rem;
+    cursor: pointer;*/
+}
+
+.lista-home {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+}
+
+.lista-home li a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    padding: 4px;       
+    border-bottom: 2px solid transparent;
+}
+
+.lista-home li a:hover {
+    cursor: pointer;
+    color: var(--cor-principal);
+    border-bottom: 2px solid;
+}
 
     /* fim-header */
 
@@ -87,7 +100,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .d-title h1 {
@@ -194,6 +206,7 @@ h2 {
 
 .d-servicos .d-cards .card p {
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .card-dir {
@@ -417,7 +430,6 @@ p.valor-pac {
     border-radius: 5px;
     box-shadow: 1px 1px 3px #143642;
     cursor: pointer;
-
 }
 
 .d-incluso {
@@ -461,9 +473,6 @@ p.valor-pac {
 
 
     /* fim-pacotes */
-
-
-
 
     /* Contato */
 
@@ -531,6 +540,7 @@ p.valor-pac {
     /* newslatter */
 
 .section-newslatter {
+    width: 100%;
     display: flex;
     padding: 40px;
     flex-direction: column;
@@ -595,6 +605,7 @@ p.valor-pac {
     /* footer */
 
 footer {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -624,9 +635,24 @@ footer {
     transform: translate(-50%, -50%);
 }
 
+.d-suporte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
 .d-suporte .icons-suport {
-    margin-top: 5px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.icons-suport span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
 }
 
 .icons-suport span ion-icon {
@@ -767,7 +793,7 @@ html {
     /* Sobre */
 
     .section-sobre {
-        width: 600px;
+        width: 500px;
     }
 
     /* Pontos Turisticos */
@@ -782,16 +808,24 @@ html {
     }
 
     .seta-esq {
-        position: absolute;
-        top: 50%;
-        left: -20px;
+        left: 10px;
     }
 
     .seta-dir {
-        position: absolute;
-        top: 50%;
-        right: -20px;
+        right: 10px;
     }
+
+    /* galeria */
+
+    .section-sobre, .d-galeria {
+        width: 680px;
+    }
+    .img-galeria img{
+        width: 280px;
+        height: 190px;
+    }
+
+    /* fim-galeria */
 
     /* animações */
 
@@ -812,4 +846,147 @@ html {
     }
 
     /* fim-prev */
+}
+
+@media (max-width: 720px) {
+
+    /*header*/
+
+    header {
+        background-color: white;
+        padding: 20px;
+    }
+
+    nav {
+        width: 100%;
+        position: relative;
+        /*display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-around;*/
+    }
+
+    .menu-burguer ion-icon{
+        display: block;
+        font-size: 2rem;
+        color: black;
+        cursor: pointer;
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .lista-home {
+        display: flex;
+        list-style-type: none;
+        gap: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .lista-home li a {
+        color: black;
+    }
+
+    /* home */
+
+    .d-title h1 {
+        font-size: 2.6rem;
+    }
+
+    .d-title p {
+        font-size: 1rem;
+    }
+
+    /* sobre */
+
+    .section-sobre {
+        width: 600px;
+    }
+
+        /* Pontos Turisticos */
+
+    .d-cards-container {
+        width: 420px;
+    }
+
+    .d-cards-tour {
+        gap: 30px;
+    }
+
+    .seta-esq {
+        left: 10px;
+    }
+
+    .seta-dir {
+        right: 10px;
+    }
+
+    /* contato */
+
+    .section-contato {
+        width: 100%;
+        padding: 50px 10px;
+    }
+
+    .d-inputs {
+        width: 100%;
+
+    }
+
+    .div-input-name {
+        width: 100%;
+
+    }
+
+    .section-contato input {
+        width: 100%;
+    }
+
+    /* newslatter */
+
+    .section-newslatter {
+       padding: 50px 10px;
+    }
+
+    .section-newslatter .news-mail {
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .news-mail .d-input-news {
+        width: 100%;
+        /*display: flex;
+        align-items: center;
+        position: relative;*/
+    }
+
+    .d-input-news input {
+        width: 100%;
+    }
+
+    .d-input-news span {
+        left: 10px;
+    }
+
+    .d-paragrafo-news p {
+        width: 100%;
+    }
+
+    /* footer */
+
+    footer {
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .d-politicas{
+        gap: 10px;
+    }
 }
