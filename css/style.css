@@ -961,7 +961,7 @@ html {
     }
 
     .news-mail .d-input-news {
-        width: 100%;
+        width: 90%;
         /*display: flex;
         align-items: center;
         position: relative;*/
@@ -988,5 +988,131 @@ html {
 
     .d-politicas{
         gap: 10px;
+    }
+}
+
+@media (max-width: 630px){
+
+    /* home */
+
+    .d-title h1 {
+        font-size: 2.4rem;
+    }
+    
+    .d-title p {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .conteudo-home .d-button #btn-principal {
+        padding: 12px;
+        font-size: 0.7rem;
+    }
+
+    /* sobre */
+    .section-sobre {
+        width: 100%;
+        padding: 48px 25px 0 25px;
+    }
+
+            /* Pontos Turisticos */
+
+    .d-cards-container {
+        width: 380px;
+    }
+
+    .d-cards-tour {
+        gap: 30px;
+    }
+
+    .seta-esq {
+        left: -10px;
+    }
+
+    .seta-dir {
+        right: -10px;
+    }
+
+    /* galeria */
+
+    .section-sobre, .d-galeria {
+        width: 100%;
+    }
+    .img-galeria img{
+        width: 240px;
+        height: 160px;
+    }
+
+    /* footer */
+
+    .d-politicas {
+        width: 100px;
+    }
+}
+
+@media (max-width: 540px){
+
+    /* sobre */
+
+
+        /*d-servicos*/
+
+        .d-servicos .d-cards .card {
+            width: 65%;
+        }
+
+        .card-dir {
+            margin-left: 35%;
+        }
+
+        /* p-turisticos */
+
+        .d-cards-container {
+            width: 300px;
+        }
+    
+        .seta-esq {
+            left: 0px;
+        }
+    
+        .seta-dir {
+            right: 0px;
+        }
+
+
+    /* galeria */
+
+    .img-galeria img{
+        width: 210px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* sobre */
+
+
+        /*d-servicos*/
+
+        .d-servicos .d-cards .card {
+            width: 75%;
+        }
+
+        .card-dir {
+            margin-left: 25%;
+        }
+
+        /* p-turisticos */
+
+        .d-cards-container {
+            width: 200px;
+        }
+
+    /* galeria */
+
+    .img-galeria img{
+        width: 180px;
+        height: 120px;
     }
 }
