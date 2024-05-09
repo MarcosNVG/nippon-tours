@@ -853,8 +853,13 @@ html {
     /*header*/
 
     header {
+        padding: 25px;
+        transition: 0.5s ;
+    }
+
+    .cabecalho.active {
         background-color: white;
-        padding: 20px;
+
     }
 
     nav {
@@ -869,26 +874,38 @@ html {
     .menu-burguer ion-icon{
         display: block;
         font-size: 2rem;
-        color: black;
+        color: white;
         cursor: pointer;
         position: absolute;
         left: 100%;
         top: 50%;
         transform: translate(-50%, -50%);
+        transition: 0.2s;
+    }
+
+    .cabecalho.active .menu-burguer ion-icon {
+        color: black;
     }
 
     .lista-home {
+        display: none;
+    }
+
+    .cabecalho.active .lista-home {
         display: flex;
         list-style-type: none;
-        gap: 30px;
+        gap: 20px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
-    .lista-home li a {
+    .cabecalho.active .lista-home li a{
         color: black;
+        padding: 7px;
+        border-radius: 12px;
+        box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.4);
     }
 
     /* home */
@@ -1052,6 +1069,20 @@ html {
 
 @media (max-width: 540px){
 
+    /* header */
+    
+    .cabecalho.active {
+     padding: 50px 20px;
+    }
+
+    .lista-home {
+        width: 250px;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+
     /* sobre */
 
 
@@ -1108,6 +1139,7 @@ html {
         .d-cards-container {
             width: 200px;
         }
+        
 
     /* galeria */
 

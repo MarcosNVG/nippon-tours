@@ -1,3 +1,4 @@
+const cabecalho = document.querySelector('.cabecalho');
 const secards = document.querySelector('.d-cards');
 const btnvm = document.querySelector('#btn-vm');
 const pac1 = document.querySelector('.pacote-1');
@@ -21,10 +22,16 @@ let locais = '';
 let tempoViagem = '';
 let price = '';
 
+            /* header responsivo */
+
+function ativarMenu(){
+    cabecalho.classList.toggle('active');
+}
+
             /* botão ver mais serviços */
 
 function verMais(){
-    secards.classList.toggle('active')
+    secards.classList.toggle('active');
     if (btnvm.textContent == "Veja mais") {
         btnvm.innerHTML = 'Veja menos'
     } else {
