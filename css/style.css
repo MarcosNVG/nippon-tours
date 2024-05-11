@@ -925,6 +925,12 @@ html {
         width: 600px;
     }
 
+        /* serviços */
+
+    .d-servicos .active .oculto{
+        max-height: 514px;
+    }
+
         /* Pontos Turisticos */
 
     .d-cards-container {
@@ -1032,8 +1038,13 @@ html {
         width: 100%;
         padding: 48px 25px 0 25px;
     }
+        /* serviços */
 
-            /* Pontos Turisticos */
+    .d-servicos .active .oculto{
+        max-height: 546px;
+    }
+
+        /* Pontos Turisticos */
 
     .d-cards-container {
         width: 380px;
@@ -1065,6 +1076,12 @@ html {
 
     .d-politicas {
         width: 100px;
+    }
+}
+
+@media (max-width: 561px){
+    .d-servicos .active .oculto{
+        max-height: 578px;
     }
 }
 
@@ -1194,11 +1211,6 @@ html {
     }
     
     .d-button-pac {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: var(--cor-principal);
-        font-size: 0.9rem;
         text-align: center;
         gap: 30px;
     }
@@ -1224,6 +1236,25 @@ html {
     .pac-active .d-incluso-3 {
         max-height: 690px;
     }
+
+    /* footer */
     
-    
+    footer {
+        flex-wrap: wrap;
+    }
+
+    footer .logo {
+        width: 100%;
+        order: 3;
+        margin-top: 20px;
+    }
+
+    footer .logo h2 {
+        font-size: 1.5rem;
+    }
+
+    .d-politicas {
+        width: 100%;
+        margin-bottom: 20px
+    }    
 }
