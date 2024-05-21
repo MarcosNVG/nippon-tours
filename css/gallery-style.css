@@ -6,7 +6,7 @@
 
 body {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: #143642;
     color: white;
     font-family: sans-serif;
@@ -14,22 +14,23 @@ body {
 
 header {
     width: 100%;
-    height: 5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 10px 10px;
     font-size: 1rem;
     
 }
 
 header h2 {
     color: #ff2400;
+    text-align: center;
 }
 
 header a {
     color: #dad2d8;
     text-decoration: none;
+    text-align: center;
 }
 
 header a:hover {
@@ -41,7 +42,7 @@ header a:hover {
 
 .gallery-container {
     width: 100%;
-    height: 90vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,15 +73,35 @@ header a:hover {
 
 .gallery-image-container li {
     width: 300px;
-    height: 212px;
+    height: 200px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     transition: all .4s ease-in;
 }
 
-.gallery-image-container li:hover {
+/*.gallery-image-container li:hover {
     transform: scale(1.7);
+}*/
+
+.gallery-image-container li.active {
+    transform: scale(1.7);
+    z-index: 10;
+
+}
+
+.opacity {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 8;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.container-active .opacity {
+    display: block;
 }
 
 /*.div-image {
@@ -96,16 +117,23 @@ header a:hover {
 
             /*adicionando imagens*/
 
+    
+
 #image01 {
     background: url("https://images.pexels.com/photos/17776656/pexels-photo-17776656/free-photo-of-rua-via-construcao-predio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-position: 50% 50%;
     background-size: 600px 424px;
 }
 
-#image01:hover {
+#image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
     background-position: 0 0;
-    background-size: 300px 212px;
+    background-size: 300px 200px;
 }
+
+/*#image01.active {
+    background-position: 0 0;
+    background-size: 300px 200px;
+}*/
 
 #image02 {
     background: url("https://images.pexels.com/photos/17940005/pexels-photo-17940005/free-photo-of-cidade-meio-urbano-noite-rua.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -113,10 +141,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image02:hover {
+/*#image02.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image03 {
     background: url("https://images.pexels.com/photos/2187308/pexels-photo-2187308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -124,10 +152,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image03:hover {
+/*#image03.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image04 {
     background: url("https://images.pexels.com/photos/2187661/pexels-photo-2187661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -135,10 +163,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image04:hover {
+/*#image04.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image05 {
     background: url("https://images.pexels.com/photos/1829980/pexels-photo-1829980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -146,10 +174,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image05:hover {
+/*#image05.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image06 {
     background: url("https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -157,10 +185,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image06:hover {
+/*#image06.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image07 {
     background: url("https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -168,10 +196,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image07:hover {
+/*#image07.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image08 {
     background: url("https://images.pexels.com/photos/161401/fushimi-inari-taisha-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -179,10 +207,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image08:hover {
+/*#image08.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image09 {
     background: url("https://images.pexels.com/photos/2067057/pexels-photo-2067057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -190,10 +218,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image09:hover {
+/*#image09.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image10 {
     background: url("https://images.pexels.com/photos/161923/osaka-castle-japan-five-osaka-161923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -201,10 +229,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image10:hover {
+/*#image10.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image11 {
     background: url("https://images.pexels.com/photos/208321/pexels-photo-208321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -212,10 +240,10 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image11:hover {
+/*#image11.active {
     background-position: 0 0;
-    background-size: 300px 212px;
-}
+    background-size: 300px 200px;
+}*/
 
 #image12 {
     background: url("https://images.pexels.com/photos/14894269/pexels-photo-14894269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -223,8 +251,395 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image12:hover {
+/*#image12.active {
     background-position: 0 0;
-    background-size: 300px 212px;
+    background-size: 300px 200px;
+}*/
+
+
+        /*responsivo*/
+
+@media (max-width: 1520px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 270px);
+    }
+
+    .gallery-image-container li {
+        width: 270px;
+        height: 180px;
+    }
+
+    /*.gallery-image-container li:hover {
+        transform: scale(1.7);
+    }*/
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 270px 180px;
+    }
 }
 
+@media (max-width: 1350px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 255px);
+    }
+
+    .gallery-image-container li {
+        width: 255px;
+        height: 170px;
+    }
+    
+    /*.gallery-image-container li:hover {
+        transform: scale(1.5);
+    }*/
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 255px 170px;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 246px);
+    }
+
+    .gallery-image-container li {
+        width: 246px;
+        height: 164px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 246px 164px;
+    }
+}
+
+@media (max-width: 1230px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 234px);
+    }
+
+    .gallery-image-container li {
+        width: 234px;
+        height: 156px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 234px 156px;
+    }
+}
+
+@media (max-width: /*1120*/1180px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 225px);
+    }
+
+    .gallery-image-container li {
+        width: 225px;
+        height: 150px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 225px 150px;
+    }
+}
+
+@media (max-width: /*1090*/1130px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 216px);
+    }
+
+    .gallery-image-container li {
+        width: 216px;
+        height: 144px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 216px 144px;
+    }
+}
+
+@media (max-width: /*1050*/1090px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 210px);
+    }
+
+    .gallery-image-container li {
+        width: 210px;
+        height: 140px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 210px 140px;
+    }
+}
+
+@media (max-width: /*1020*/1060px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(4, 198px);
+    }
+
+    .gallery-image-container li {
+        width: 198px;
+        height: 132px;
+    }
+
+    /*.gallery-image-container li:hover {
+        transform: none;
+    }
+
+   #image01:hover, #image02:hover, #image03:hover, #image04:hover, #image05:hover, #image06:hover,#image07:hover, #image08:hover, #image09:hover, #image10:hover, #image11:hover, #image12:hover {
+        background-position: 50% 50%;
+        background-size: 600px 424px;
+    }*/
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 198px 132px;
+    }
+    
+}
+
+@media (max-width: 1010px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(3, 255px);
+    }
+
+    .gallery-image-container li {
+        width: 255px;
+        height: 170px;
+    }
+
+    .gallery-image-container li.active {
+        transform: scale(1.5);
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 255px 170px;
+    }
+}
+
+@media (max-width: 950px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(3, 234px);
+    }
+
+    .gallery-image-container li {
+        width: 234px;
+        height: 156px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 234px 156px;
+    }
+
+}
+
+@media (max-width: 880px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(3, 216px);
+    }
+
+    .gallery-image-container li {
+        width: 216px;
+        height: 144px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 216px 144px;
+    }
+}
+
+@media (max-width: 810px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(3, 198px);
+    }
+
+    .gallery-image-container li {
+        width: 198px;
+        height: 132px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 198px 132px;
+    }
+}
+
+@media (max-width: 740px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(3, 180px);
+    }
+
+    .gallery-image-container li {
+        width: 180px;
+        height: 120px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 180px 120px;
+    }
+}
+
+@media (max-width: 680px) {
+    body {
+        padding-bottom: 100px;
+    }
+
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 234px);
+    }
+
+    .gallery-image-container li {
+        width: 234px;
+        height: 156px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 234px 156px;
+    }
+}
+
+@media (max-width: 640px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 216px);
+    }
+
+    .gallery-image-container li {
+        width: 216px;
+        height: 144px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 216px 144px;
+    }
+}
+
+@media (max-width: 590px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 198px);
+    }
+
+    .gallery-image-container li {
+        width: 198px;
+        height: 132px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 198px 132px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 180px);
+    }
+
+    .gallery-image-container li {
+        width: 180px;
+        height: 120px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 180px 120px;
+    }
+
+    .gallery-content{
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 171px);
+    }
+
+    .gallery-image-container li {
+        width: 171px;
+        height: 114px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 171px 114px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 162px);
+    }
+
+    .gallery-image-container li {
+        width: 162px;
+        height: 108px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 162px 108px;
+    }
+}
+
+@media (max-width: 450px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 150px);
+    }
+
+    .gallery-image-container li {
+        width: 150px;
+        height: 100px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 150px 100px;
+    }
+}
+
+@media (max-width: 420px) {
+    header a {
+        max-width: 200px;
+    }
+
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 132px);
+    }
+
+    .gallery-image-container li {
+        width: 132px;
+        height: 88px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 132px 88px;
+    }
+}
+
+@media (max-width: 380px) {
+    .gallery-image-container {
+        grid-template-columns: repeat(2, 120px);
+    }
+
+    .gallery-image-container li {
+        width: 120px;
+        height: 80px;
+    }
+
+    #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
+        background-size: 120px 80px;
+    }
+}
+
+
+@keyframes moveimg {
+    to {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
