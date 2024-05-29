@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 1px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--cor-secundaria);
+}
+
+
 body {
     width: 100%;
     height: auto;
@@ -17,9 +31,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
-    font-size: 1rem;
-    
+    padding: 10px;
+    font-size: 1rem; 
 }
 
 header h2 {
@@ -78,16 +91,12 @@ header a:hover {
     border-radius: 8px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     transition: all .4s ease-in;
+    cursor: pointer;
 }
-
-/*.gallery-image-container li:hover {
-    transform: scale(1.7);
-}*/
 
 .gallery-image-container li.active {
     transform: scale(1.7);
     z-index: 10;
-
 }
 
 .opacity {
@@ -100,19 +109,30 @@ header a:hover {
     z-index: 8;
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 .container-active .opacity {
     display: block;
 }
 
-/*.div-image {
-    width: 300px;
-    height: 212px;
+.img-centro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
 }
 
-.div-image img {
-    width: 100%;
-    height: 100%;
-}*/
+.img-centro {
+    display: none;
+}
+
+.btn-exit-img {
+    display: none;
+}
 
 
             /*adicionando imagens*/
@@ -125,26 +145,11 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-#image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-    background-position: 0 0;
-    background-size: 300px 200px;
-}
-
-/*#image01.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
-
 #image02 {
     background: url("https://images.pexels.com/photos/17940005/pexels-photo-17940005/free-photo-of-cidade-meio-urbano-noite-rua.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-position: 50% 50%;
     background-size: 600px 424px;
 }
-
-/*#image02.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
 
 #image03 {
     background: url("https://images.pexels.com/photos/2187308/pexels-photo-2187308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -152,21 +157,11 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-/*#image03.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
-
 #image04 {
     background: url("https://images.pexels.com/photos/2187661/pexels-photo-2187661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-position: 50% 50%;
     background-size: 600px 424px;
 }
-
-/*#image04.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
 
 #image05 {
     background: url("https://images.pexels.com/photos/1829980/pexels-photo-1829980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -174,21 +169,11 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-/*#image05.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
-
 #image06 {
     background: url("https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-position: 50% 50%;
     background-size: 600px 424px;
 }
-
-/*#image06.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
 
 #image07 {
     background: url("https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -196,21 +181,11 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-/*#image07.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
-
 #image08 {
     background: url("https://images.pexels.com/photos/161401/fushimi-inari-taisha-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-position: 50% 50%;
     background-size: 600px 424px;
 }
-
-/*#image08.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
 
 #image09 {
     background: url("https://images.pexels.com/photos/2067057/pexels-photo-2067057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -218,21 +193,11 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-/*#image09.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
-
 #image10 {
     background: url("https://images.pexels.com/photos/161923/osaka-castle-japan-five-osaka-161923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-position: 50% 50%;
     background-size: 600px 424px;
 }
-
-/*#image10.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
 
 #image11 {
     background: url("https://images.pexels.com/photos/208321/pexels-photo-208321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
@@ -240,22 +205,16 @@ header a:hover {
     background-size: 600px 424px;
 }
 
-/*#image11.active {
-    background-position: 0 0;
-    background-size: 300px 200px;
-}*/
-
 #image12 {
     background: url("https://images.pexels.com/photos/14894269/pexels-photo-14894269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
     background-position: 50% 50%;
     background-size: 600px 424px;
 }
 
-/*#image12.active {
+#image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
     background-position: 0 0;
     background-size: 300px 200px;
-}*/
-
+}
 
         /*responsivo*/
 
@@ -331,7 +290,7 @@ header a:hover {
     }
 }
 
-@media (max-width: /*1120*/1180px) {
+@media (max-width: 1180px) {
 
     .gallery-image-container {
         grid-template-columns: repeat(4, 225px);
@@ -347,7 +306,7 @@ header a:hover {
     }
 }
 
-@media (max-width: /*1090*/1130px) {
+@media (max-width: 1130px) {
 
     .gallery-image-container {
         grid-template-columns: repeat(4, 216px);
@@ -363,7 +322,7 @@ header a:hover {
     }
 }
 
-@media (max-width: /*1050*/1090px) {
+@media (max-width: 1090px) {
 
     .gallery-image-container {
         grid-template-columns: repeat(4, 210px);
@@ -379,7 +338,7 @@ header a:hover {
     }
 }
 
-@media (max-width: /*1020*/1060px) {
+@media (max-width: 1060px) {
 
     .gallery-image-container {
         grid-template-columns: repeat(4, 198px);
@@ -389,15 +348,6 @@ header a:hover {
         width: 198px;
         height: 132px;
     }
-
-    /*.gallery-image-container li:hover {
-        transform: none;
-    }
-
-   #image01:hover, #image02:hover, #image03:hover, #image04:hover, #image05:hover, #image06:hover,#image07:hover, #image08:hover, #image09:hover, #image10:hover, #image11:hover, #image12:hover {
-        background-position: 50% 50%;
-        background-size: 600px 424px;
-    }*/
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
         background-size: 198px 132px;
@@ -416,11 +366,42 @@ header a:hover {
     }
 
     .gallery-image-container li.active {
-        transform: scale(1.5);
+        transform: scale(1);
+        z-index: 1;
+    }
+
+    .opacity {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .container-active .img-centro {
+        display: block;
+        margin-bottom: 75px;
+        width: 846px;
+        height: 564px;
+        background-color: #ff2400;
+        border-radius: 24px;
+        z-index: 20;
+    }
+
+    .container-active .btn-exit-img {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 2px solid white;
+        background-color: transparent;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.5rem;
+        z-index: 20;
+        cursor: pointer;
+        transition:  0.25s ease-in;
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 255px 170px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -435,7 +416,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 234px 156px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 
 }
@@ -450,8 +432,15 @@ header a:hover {
         height: 144px;
     }
 
+    .container-active .img-centro {
+        width: 642px;
+        height: 428px;
+        border-radius: 24px;
+    }
+
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 216px 144px;
+        background-position: 50% 50%;
+        background-size: 642px 428px;
     }
 }
 
@@ -466,7 +455,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 198px 132px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -481,13 +471,14 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 180px 120px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
 @media (max-width: 680px) {
     body {
-        padding-bottom: 100px;
+        padding-bottom: 50px;
     }
 
     .gallery-image-container {
@@ -499,8 +490,15 @@ header a:hover {
         height: 156px;
     }
 
+    .container-active .img-centro {
+        width: 95vw;
+        height: calc((2 * 95vw) / 3);
+        border-radius: 24px;
+    }
+
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 234px 156px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -515,7 +513,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 216px 144px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -530,7 +529,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 198px 132px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -546,7 +546,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 180px 120px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 
     .gallery-content{
@@ -566,7 +567,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 171px 114px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -581,7 +583,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 162px 108px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -596,7 +599,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 150px 100px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -615,7 +619,8 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 132px 88px;
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }
 
@@ -630,16 +635,7 @@ header a:hover {
     }
 
     #image01.active, #image02.active, #image03.active, #image04.active,  #image05.active, #image06.active, #image07.active, #image08.active, #image09.active, #image10.active, #image11.active, #image12.active{
-        background-size: 120px 80px;
-    }
-}
-
-
-@keyframes moveimg {
-    to {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        background-position: 50% 50%;
+        background-size: 600px 424px;
     }
 }

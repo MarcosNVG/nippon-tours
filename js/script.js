@@ -22,6 +22,10 @@ let locais = '';
 let tempoViagem = '';
 let price = '';
 
+function iniciar(){
+    window.alert('Este é apenas um projeto prático, todas as imagens usadas nesse projeto foram retiradas do site pexels.com')
+}
+
             /* header responsivo */
 
 function ativarMenu(){
@@ -89,7 +93,7 @@ function clicar(p) {
 
         setTimeout(()=>{
             setaRight.style.transform = 'scale(1)';
-            setaLeft.style.transform = 'scale(1)';
+            /*setaLeft.style.transform = 'scale(1)';*/
         }, 100);
 
         setTimeout(()=>{
@@ -109,13 +113,10 @@ function clicar(p) {
         }, 500);
         
         setTimeout(()=>{
-            setaRight.style.transform = 'scale(1)';
+            /*setaRight.style.transform = 'scale(1)';*/
             setaLeft.style.transform = 'scale(1)';
         }, 100);
 
-        function removerClass(){
-           
-        }
     }
 }
 
